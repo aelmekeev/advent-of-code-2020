@@ -1,7 +1,8 @@
 import { readFileSync } from 'fs'
+import path from "path";
 
 // read the file
-const file = readFileSync('./data', 'utf-8')
+const file = readFileSync(path.join(__dirname, 'data'), "utf-8");
 const lines = file.split('\n')
 
 const STEP = 3
@@ -17,7 +18,7 @@ lines.forEach(line => {
     }
     position = (position + STEP) % lineWidth
 })
-console.log(treeCounter)
+console.log(`Answer #1: ${treeCounter}`)
 
 // get an answer #2
 const slopes = [
@@ -39,4 +40,4 @@ slopes.forEach( slope => {
     }
     treeCounters.push(treeCounter)
 })
-console.log(`${treeCounters.join(' * ')} = ${treeCounters.reduce((a, b) => a * b, 1)}`)
+console.log(`Answer #2: ${treeCounters.join(' * ')} = ${treeCounters.reduce((a, b) => a * b, 1)}`)

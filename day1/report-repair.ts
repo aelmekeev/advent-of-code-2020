@@ -1,7 +1,8 @@
 import { readFileSync } from 'fs'
+import path from "path";
 
 // read the file
-const file = readFileSync('./data', 'utf-8')
+const file = readFileSync(path.join(__dirname, 'data'), "utf-8");
 const numbers = file.split('\n').map(d => +d)
 
 // get an answer v1
