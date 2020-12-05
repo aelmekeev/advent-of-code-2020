@@ -2,7 +2,7 @@ import { readFileSync } from "fs";
 import path from "path";
 
 // read the file
-const file = readFileSync(path.join(__dirname, 'data'), "utf-8");
+const file = readFileSync(path.join(__dirname, "data"), "utf-8");
 const lines = file.split("\n");
 
 const REQUIRED = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
